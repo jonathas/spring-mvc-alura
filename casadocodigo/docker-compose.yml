@@ -1,0 +1,22 @@
+version: "2"
+services:
+   # web:
+   #     image: tomcat:7-jre8-alpine
+   #     container_name: casadocodigo_server
+   #     volumes:
+   #         - ./tomcat:/usr/local/tomcat/webapps/src
+   #     network_mode: host
+
+    db:
+        image: mariadb:10.3
+        container_name: casadocodigo_db
+        volumes:
+            - ./mysql_data:/var/lib/mysql
+        environment:
+          - MYSQL_ALLOW_EMPTY_PASSWORD="true"
+        network_mode: host
+
+networks:
+    default:
+        external:
+            name: "host"
