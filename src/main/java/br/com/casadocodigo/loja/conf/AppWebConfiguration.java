@@ -8,6 +8,7 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.format.datetime.DateFormatterRegistrar;
 import org.springframework.format.support.DefaultFormattingConversionService;
 import org.springframework.format.support.FormattingConversionService;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -22,7 +23,7 @@ import br.com.casadocodigo.loja.models.CarrinhoCompras;
 @ComponentScan(basePackageClasses = { HomeController.class, ProdutoDAO.class, FileSaver.class, CarrinhoCompras.class })
 public class AppWebConfiguration {
 
-	// A annotation Bean diz pro Spring usar essa classe na configuração
+	// The Bean annotation tells Spring to use this class for configuration
 	@Bean
 	public InternalResourceViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -58,6 +59,12 @@ public class AppWebConfiguration {
 	@Bean
 	public MultipartResolver multipartResolver() {
 		return new StandardServletMultipartResolver();
+	}
+	
+	@Bean
+	public RestTemplate restTemplate() {
+		// If you need to configure headers for REST access, etc
+		return new RestTemplate();
 	}
 
 }
