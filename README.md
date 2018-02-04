@@ -1,9 +1,5 @@
 # Alura - Spring MVC I Course: Creating web applications
 
-I've studied so far until "Sending files to the server". 
-Next up: "Friendly URLs"
-I'll be updating the code of this repository as I go through the course.
-
 ## Content
 
 ### Getting Started with SpringMVC
