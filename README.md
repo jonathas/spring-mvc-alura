@@ -1,6 +1,6 @@
 # Alura - Spring MVC I Course: Creating web applications
 
-This is the code that I've developed following the course. I've made some changes on the original one.
+This is the code that I've developed following the course. I've made some changes in the original one.
 
 ## Content
 
