@@ -48,9 +48,9 @@
 
 		<table class="table table-bordered table-striped table-hover">
 			<tr>
-				<td>Titulo</td>
-				<td>Descrição</td>
-				<td>Páginas</td>
+				<th>Titulo</th>
+				<th>Descrição</th>
+				<th>Páginas</th>
 			</tr>
 			<c:forEach items="${produtos }" var="produto">
 				<tr>

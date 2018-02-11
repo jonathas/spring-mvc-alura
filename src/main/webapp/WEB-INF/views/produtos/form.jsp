@@ -14,6 +14,11 @@
 	href="${contextPath}resources/css/bootstrap.min.css" />
 <link rel="stylesheet"
 	href="${contextPath}resources/css/bootstrap-theme.min.css" />
+	<style type="text/css">
+		body {
+			padding-bottom: 60px;
+		}
+	</style>
 </head>
 <body>
 
