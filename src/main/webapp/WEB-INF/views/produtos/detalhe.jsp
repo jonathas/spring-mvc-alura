@@ -16,7 +16,7 @@
 	type="image/ico" />
 <link href="https://plus.googlecom/108540024862647200608"
 	rel="publisher" />
-<title>${produto.titulo }- Casa do Código</title>
+<title>${produto.titulo }-Casa do Código</title>
 <link href="${contextPath}resources/css/cssbase-min.css"
 	rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700'
@@ -50,7 +50,8 @@
 				<nav id="main-nav">
 
 					<ul class="clearfix">
-						<li><a href="${s:mvcUrl('CCC#itens').build() }" rel="nofollow">Carrinho (${carrinhoCompras.quantidade })</a></li>
+						<li><a href="${s:mvcUrl('CCC#itens').build() }"
+							rel="nofollow">Carrinho (${carrinhoCompras.quantidade })</a></li>
 
 						<li><a href="/pages/sobre-a-casa-do-codigo" rel="nofollow">Sobre
 								Nós</a></li>
@@ -99,7 +100,8 @@
 
 
 		<section class="buy-options clearfix">
-			<form action="<c:url value='/carrinho/add' />" method="post" class="container">
+			<form action="<c:url value='/carrinho/add' />" method="post"
+				class="container">
 				<input type="hidden" value="${produto.id }" name="produtoId" />
 				<ul id="variants" class="clearfix">
 					<c:forEach items="${produto.precos }" var="preco">
@@ -112,6 +114,10 @@
 				</ul>
 				<button type="submit" class="submit-image icon-basket-alt"
 					alt="Compre Agora" title="Compre Agora '${produto.titulo }'"></button>
+
+				<!-- csrf token -->
+				<input type="hidden" name="${_csrf.parameterName }"
+					value="${_csrf.token}">
 
 			</form>
 

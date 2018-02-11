@@ -20,11 +20,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		// the order here matters
 		http.authorizeRequests()
         .antMatchers("/produtos/form").hasRole("ADMIN")
-        .antMatchers("/carrinho").permitAll()
+        .antMatchers("/carrinho/**").permitAll()
         .antMatchers("/produtos").hasRole("ADMIN")
         .antMatchers("/produtos/**").permitAll()
         .antMatchers("/").permitAll()
         .anyRequest().authenticated().and().formLogin();
+		
+		http.csrf();
 	}
 	
 	@Override
