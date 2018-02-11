@@ -1,4 +1,4 @@
-# Alura - Spring MVC I Course: Creating web applications
+# Alura - Spring MVC Course: Creating web applications + Integration, Caching, Security and Templates
 
 This is the code that I've developed following the course. I've made some changes in the original one.
 
@@ -92,3 +92,37 @@ This is the code that I've developed following the course. I've made some change
 
   - Calling REST services
 
+
+### Creating Store Home
+
+  - Improving design
+  - Loading the book list only once
+  - Renewing the list of books
+  - Using a robust cache
+
+
+### Integrating the store
+
+  - Making REST service available
+
+
+### Improving application administration
+
+  - Adding Bootstrap
+  - Enabling Spring for General Files
+
+
+### Securing Application Features
+
+  - Enabling Spring Security
+  - Releasing application assets
+  - Registering Users and Profiles
+  - Viewing User Data
+  - Protecting the store from external attacks
+  - Creating our own login screen
+
+
+### Standardizing the store with templates
+
+  - Separating Header and Footer
+  - Using tags for JSP templates
