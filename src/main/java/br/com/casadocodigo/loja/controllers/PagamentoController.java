@@ -35,10 +35,10 @@ public class PagamentoController {
 				String response = restTemplate.postForObject(uri, new DadosPagamento(carrinho.getTotal()), String.class);
 				
 				System.out.println(response);
-				model.addFlashAttribute("sucesso", response);
+				model.addFlashAttribute("message", response);
 			} catch (HttpClientErrorException e) {
 				e.printStackTrace();
-				model.addFlashAttribute("falha", "Valor maior que o permitido");
+				model.addFlashAttribute("message", "Valor maior que o permitido");
 			}
 			
 			return new ModelAndView("redirect:/produtos");

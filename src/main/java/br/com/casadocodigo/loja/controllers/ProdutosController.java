@@ -55,12 +55,14 @@ public class ProdutosController {
 			return form(produto);
 		}
 		
-		String path = fileSaver.write("arquivos-sumario", sumario);
-		produto.setSumarioPath(path);
+		if (!sumario.isEmpty()) {
+			String path = fileSaver.write("arquivos-sumario", sumario);
+			produto.setSumarioPath(path);
+		}
 		
 		produtoDao.gravar(produto);
 
-		redirectAttributes.addFlashAttribute("sucesso", "Produto cadastrado com sucesso!");
+		redirectAttributes.addFlashAttribute("message", "Produto cadastrado com sucesso!");
 
 		return new ModelAndView("redirect:produtos");
 	}
