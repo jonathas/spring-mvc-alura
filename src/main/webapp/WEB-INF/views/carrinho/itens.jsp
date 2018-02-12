@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
 <tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile, e muito mais...">
@@ -41,13 +42,15 @@
 						value="${carrinhoCompras.getQuantidade(item) }" /></td>
 					<td class="numeric-cell">${carrinhoCompras.getTotal(item) }</td>
 					<td class="remove-item">
-						<form
+						<form:form
 							action="${s:mvcUrl('CCC#remover').arg(0, item.produto.id).arg(1, item.tipoPreco).build() }"
 							method="post">
 							<input type="image"
 								src="${contextPath }resources/imagens/excluir.png" alt="Excluir"
 								title="Excluir" />
-						</form>
+								<input type="hidden" name="${_csrf.parameterName }"
+					value="${_csrf.token}">
+						</form:form>
 					</td>
 				</tr>
 			</c:forEach>
@@ -55,10 +58,12 @@
 		<tfoot>
 			<tr>
 				<td colspan="3">
-					<form action="${s:mvcUrl('PC#finalizar').build() }" method="post">
+					<form:form action="${s:mvcUrl('PC#finalizar').build() }" method="post">
 						<input type="submit" class="checkout" name="checkout"
 							value="Finalizar compra" />
-					</form>
+							<input type="hidden" name="${_csrf.parameterName }"
+					value="${_csrf.token}">
+					</form:form>
 				</td>
 				<td class="quantity-input-cell"><input type="submit"
 					class="update-cart" disabled="disabled" name="update" value="" /></td>
@@ -68,20 +73,6 @@
 		</tfoot>
 	</table>
 
-	<h2>Você já conhece os outros livros da Casa do Código?</h2>
-	<ul id="collection" class="related-books">
-		<li class="col-left"><a href="/products/livro-plsql"
-			class="block clearfix book-suggest"
-			data-book="PL/SQL: Domine a linguagem do banco de dados Oracle">
-				<img width="113px" height="160px"
-				src="http:////cdn.shopify.com/s/files/1/0155/7645/products/plsql-featured_compact.png?v=1434740236"
-				alt="PL/SQL: Domine a linguagem do banco de dados Oracle" />
-		</a></li>
-	</ul>
-
-	<h2>
-		<a href="produtos">Veja todos os livros que publicamos!</a>
-	</h2>
 </section>
 
 </tags:pageTemplate>
