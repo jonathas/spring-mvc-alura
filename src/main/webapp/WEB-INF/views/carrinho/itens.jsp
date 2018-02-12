@@ -2,8 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp"%>
+<tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile, e muito mais...">
 
 <section class="container middle">
 	<h2 id="cart-title">Seu carrinho de compras</h2>
@@ -83,4 +84,4 @@
 	</h2>
 </section>
 
-<%@include file="/WEB-INF/views/footer.jsp" %>
+</tags:pageTemplate>

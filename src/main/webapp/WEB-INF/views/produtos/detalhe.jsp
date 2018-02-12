@@ -2,8 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 
-<%@include file="/WEB-INF/views/cabecalho.jsp"%>
+<tags:pageTemplate titulo="Livros de Java, Android, iOS, Mobile, e muito mais...">
 
 <article id="${produto.id }">
 	<header id="product-highlight" class="clearfix">
@@ -75,4 +76,4 @@
 
 </article>
 
-<%@include file="/WEB-INF/views/footer.jsp" %>
+</tags:pageTemplate>
