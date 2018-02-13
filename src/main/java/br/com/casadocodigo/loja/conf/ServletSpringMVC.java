@@ -14,7 +14,8 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { SecurityConfiguration.class, AppWebConfiguration.class, JPAConfiguration.class };
+		return new Class[] { SecurityConfiguration.class, AppWebConfiguration.class, JPAConfiguration.class,
+				JPAProductionConfiguration.class };
 	}
 
 	@Override
@@ -31,7 +32,8 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 	protected Filter[] getServletFilters() {
 		CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
 		encodingFilter.setEncoding("UTF-8");
-		// to enable lazyInitialization, add this filter: new OpenEntityManagerInViewFilter()
+		// to enable lazyInitialization, add this filter: new
+		// OpenEntityManagerInViewFilter()
 		return new Filter[] { encodingFilter };
 	}
 
@@ -40,11 +42,11 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		registration.setMultipartConfig(new MultipartConfigElement(""));
 	}
 
-	@Override
-	public void onStartup(ServletContext servletContext) throws ServletException {
-		super.onStartup(servletContext);
-		servletContext.addListener(RequestContextListener.class);
-		servletContext.setInitParameter("spring.profiles.active", "dev");
-	}
+//	@Override
+//	public void onStartup(ServletContext servletContext) throws ServletException {
+//		super.onStartup(servletContext);
+//		servletContext.addListener(RequestContextListener.class);
+//		servletContext.setInitParameter("spring.profiles.active", "dev");
+//	}
 
 }
