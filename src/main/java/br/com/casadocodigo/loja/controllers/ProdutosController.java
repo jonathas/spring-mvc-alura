@@ -85,11 +85,11 @@ public class ProdutosController {
 		return modelAndView;
 	}
 	
-	// metodo abaixo poderia ser feito se não quisessemos implementar content negotiation
+	// method below could be written if we didn't want to implement content negotiation
 	@RequestMapping("/{id}")
 	@ResponseBody
 	public Produto detalheJson(@PathVariable("id") Integer id) {
 		return produtoDao.find(id);
-	}
+	}	
 
 }
